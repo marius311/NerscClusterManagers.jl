@@ -5,7 +5,7 @@ import ClusterManagers: ElasticManager, IPv4
 
 export ElasticManager
 
-function ElasticManager(::Val{:nersc}; port=12345)
+function ElasticManager(::Val{:nersc}; port=rand(32768:61000))
     ip = strip(read(`hostname --ip-address`, String))
     cookie = randstring(16)
     
