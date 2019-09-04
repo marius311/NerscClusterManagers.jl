@@ -22,7 +22,7 @@ pkg> add https://github.com/marius311/NerscClusterManagers.jl
     This will set up the master process and print a line which tells you how to connect workers, e.g. (this will be different every time so don't use this example):
     ```
     To connect workers:
-    julia -e 'using ClusterManagers; ClusterManagers.elastic_worker("sgFIRyqWqpJX0RaR","128.55.224.49",12345)'
+    julia -e 'using ClusterManagers; ClusterManagers.elastic_worker("sgFIRyqWqpJX0RaR","128.55.224.49",45380)'
     ```
 * Now from a separate terminal, log into Cori and submit an interactive job, e.g.:
     ```bash
@@ -32,7 +32,7 @@ pkg> add https://github.com/marius311/NerscClusterManagers.jl
 * From this job, `srun` the worker command with the desired number of workers, compatible with the number of nodes you requested, e.g.
     ```bash
     # running 10 workers, two per node
-    srun -n 10 -c 32 julia -e 'using ClusterManagers; ClusterManagers.elastic_worker("sgFIRyqWqpJX0RaR","128.55.224.49",12345)'
+    srun -n 10 -c 32 julia -e 'using ClusterManagers; ClusterManagers.elastic_worker("sgFIRyqWqpJX0RaR","128.55.224.49",45380)'
     ```
     
 * Go back to the Jupyter notebook and evaluate `em`. You should see the new workers connected:
