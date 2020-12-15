@@ -1,5 +1,9 @@
 # NerscClusterManagers.jl
 
+**This functionality is now incorporated into ClusterManagers.jl and this package is no longer necessary.**
+
+---
+
 This package facilitates setting up a parallel Julia environment at [NERSC](https://nersc.gov) Cori with a Jupyter notebook as a front end. 
 
 Once set up, you will have a Jupyter notebook accessible from your local browser, which is controlling Julia workers running on the Cori compute nodes.  
